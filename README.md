@@ -1,10 +1,10 @@
-![T-Pot](doc/tpotsocial.png)
+![Tp-Pot](doc/tpotsocial.png)
 
 - - - Soon + [SSET...](https://github.com/Offensive-Penetration-Security/SSET)
 
 ![](https://github.com/Offensive-Penetration-Security/SSET/blob/master/SSET-OPS-System/logo/Offensive-Penetration-Security.png)
 
-T-OPS based on T-Pot 19.03 runs on Debian (Stable), is based heavily on
+Tp-OPS based on T-Pot 19.03 runs on Debian (Stable), is based heavily on
 
 [docker](https://www.docker.com/), [docker-compose](https://docs.docker.com/compose/)
 
