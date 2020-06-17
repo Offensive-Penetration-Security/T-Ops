@@ -4,7 +4,7 @@
 
 ![](https://github.com/Offensive-Penetration-Security/SSET/blob/master/SSET-OPS-System/logo/Offensive-Penetration-Security.png)
 
-Tp-OPS based on T-Pot 19.03 runs on Debian (Stable), is based heavily on
+Tp-OPS-honey-PWN-cracker based on T-Pot 19.03 runs on Debian (Stable), is based heavily on
 
 [docker](https://www.docker.com/), [docker-compose](https://docs.docker.com/compose/)
 
@@ -43,7 +43,7 @@ Furthermore we use the following tools
 1. Meet the [system requirements](#requirements). The T-Pot installation needs at least 6-8 GB RAM and 128 GB free disk space as well as a working internet connection.
 2. Download the T-Pot ISO from [GitHub](https://github.com/dtag-dev-sec/tpotce/releases) or [create it yourself](#createiso).
 
-- - - Download OPS Release: [Tpot-OPS](https://github.com/Offensive-Penetration-Security/T-POT-OPS-Release/raw/master/ARCHIVE/tpot-ops.iso)
+- - - Download Tp-OPS-honey-PWN-cracker Release: [Tp-OPS-honey-PWN-cracker](https://github.com/Offensive-Penetration-Security/T-POT-OPS-Release/raw/master/ARCHIVE/tpot-ops.iso)
 
 3. Install the system in a [VM](#vm) or on [physical hardware](#hw) with [internet access](#placement).
 4. Enjoy your favorite beverage - [watch](https://sicherheitstacho.eu) and [analyze](#kibana).
