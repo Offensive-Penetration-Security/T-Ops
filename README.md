@@ -1,5 +1,7 @@
 ![T-Pot](doc/tpotsocial.png)
 
+- - - Soon + SSET...
+
 T-Pot 19.03 runs on Debian (Stable), is based heavily on
 
 [docker](https://www.docker.com/), [docker-compose](https://docs.docker.com/compose/)
