@@ -1,6 +1,6 @@
 ![T-Pot](doc/tpotsocial.png)
 
-- - - Soon + SSET...
+- - - Soon + [SSET...](https://github.com/Offensive-Penetration-Security/SSET)
 
 T-Pot 19.03 runs on Debian (Stable), is based heavily on
 
