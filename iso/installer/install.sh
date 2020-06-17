@@ -399,10 +399,10 @@ for i in "$@"
         echo
         echo "--conf=<Path to \"tpot.conf\">"
 	echo "  Use this if you want to automatically deploy a T-Pot instance (--type=auto implied)."
-        echo "  A configuration example is available in \"tpotce/iso/installer/tpot.conf.dist\"."
+        echo "  A configuration example is available in \"T-OPS/iso/installer/tpot.conf.dist\"."
         echo
         echo "--type=<[user, auto, iso]>"
-	echo "  user, use this if you want to manually install a T-Pot on a Debian (Stable) machine."
+	echo "  user, use this if you want to manually install a T-Pot-OPS on a Debian (Stable) machine."
         echo "  auto, implied if a configuration file is passed as an argument for automatic deployment."
         echo "  iso, use this if you are a T-Pot developer and want to install a T-Pot from a pre-compiled iso."
         echo
