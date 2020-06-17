@@ -2,7 +2,9 @@
 
 - - - Soon + [SSET...](https://github.com/Offensive-Penetration-Security/SSET)
 
-T-Pot 19.03 runs on Debian (Stable), is based heavily on
+![](https://github.com/Offensive-Penetration-Security/SSET/blob/master/SSET-OPS-System/logo/Offensive-Penetration-Security.png)
+
+T-OPS based on T-Pot 19.03 runs on Debian (Stable), is based heavily on
 
 [docker](https://www.docker.com/), [docker-compose](https://docs.docker.com/compose/)
 
