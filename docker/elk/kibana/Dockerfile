@@ -24,11 +24,11 @@ RUN sed -i 's/dl-cdn/dl-2/g' /etc/apk/repositories && \
 #
 # Add and move files
     cd /root/dist/ && \
-#    cp kibana.svg /usr/share/kibana/src/ui/public/images/kibana.svg && \
-#    cp kibana.svg /usr/share/kibana/src/ui/public/icons/kibana.svg && \
-#    cp elk.ico /usr/share/kibana/src/ui/public/assets/favicons/favicon.ico && \
-#    cp elk.ico /usr/share/kibana/src/ui/public/assets/favicons/favicon-16x16.png && \
-#    cp elk.ico /usr/share/kibana/src/ui/public/assets/favicons/favicon-32x32.png && \
+    cp kibana.svg /usr/share/kibana/src/ui/public/images/kibana.svg && \
+    cp kibana.svg /usr/share/kibana/src/ui/public/icons/kibana.svg && \
+    cp elk.ico /usr/share/kibana/src/ui/public/assets/favicons/favicon.ico && \
+    cp elk.ico /usr/share/kibana/src/ui/public/assets/favicons/favicon-16x16.png && \
+    cp elk.ico /usr/share/kibana/src/ui/public/assets/favicons/favicon-32x32.png && \
 #
 # Setup user, groups and configs
     sed -i 's/#server.basePath: ""/server.basePath: "\/kibana"/' /usr/share/kibana/config/kibana.yml && \
