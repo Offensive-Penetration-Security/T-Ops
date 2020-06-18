@@ -132,7 +132,7 @@ services:
 ## Kibana service
   kibana:
     build: elk/kibana/.
-    image: docker.elastic.co/kibana/kibana:7.7.1
+    image: nu11secur1ty/elk
     #image: "dtagdevsec/kibana:2006"
 
 ## Logstash service
