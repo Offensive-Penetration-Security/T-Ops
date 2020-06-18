@@ -1,7 +1,7 @@
-FROM node:10.15.2-alpine
+FROM node:10.19.0-alpine
 #
 # VARS
-ENV KB_VER=7.7.1
+ENV KB_VER=6.8.6
 # 
 # Include dist
 ADD dist/ /root/dist/
@@ -50,8 +50,8 @@ RUN sed -i 's/dl-cdn/dl-2/g' /etc/apk/repositories && \
     echo "xpack.ml.enabled: false" >> /usr/share/kibana/config/kibana.yml && \
     echo "elasticsearch.requestTimeout: 60000" >> /usr/share/kibana/config/kibana.yml && \
     echo "elasticsearch.shardTimeout: 60000" >> /usr/share/kibana/config/kibana.yml && \
-    rm -rf /usr/share/kibana/optimize/bundles/* && \
-    /usr/share/kibana/bin/kibana --optimize --allow-root && \
+    #rm -rf /usr/share/kibana/optimize/bundles/* && \
+    #/usr/share/kibana/bin/kibana --optimize --allow-root && \
     addgroup -g 2000 kibana && \
     adduser -S -H -s /bin/ash -u 2000 -D -g 2000 kibana && \
     chown -R kibana:kibana /usr/share/kibana/ && \
