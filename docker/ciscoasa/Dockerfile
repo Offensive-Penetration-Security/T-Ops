@@ -13,6 +13,7 @@ RUN sed -i 's/dl-cdn/dl-2/g' /etc/apk/repositories && \
             openssl \
             openssl-dev \
             python3 \
+            python3-pip \
             python3-dev && \
 #
 # Setup user
