@@ -1,7 +1,7 @@
 FROM node:10.19.0-alpine
 #
 # VARS
-ENV KB_VER=6.8.6
+ENV KB_VER=7.7.1
 # 
 # Include dist
 ADD dist/ /root/dist/
@@ -24,11 +24,11 @@ RUN sed -i 's/dl-cdn/dl-2/g' /etc/apk/repositories && \
 #
 # Add and move files
     cd /root/dist/ && \
-    cp kibana.svg /usr/share/kibana/src/ui/public/images/kibana.svg && \
-    cp kibana.svg /usr/share/kibana/src/ui/public/icons/kibana.svg && \
-    cp elk.ico /usr/share/kibana/src/ui/public/assets/favicons/favicon.ico && \
-    cp elk.ico /usr/share/kibana/src/ui/public/assets/favicons/favicon-16x16.png && \
-    cp elk.ico /usr/share/kibana/src/ui/public/assets/favicons/favicon-32x32.png && \
+#    cp kibana.svg /usr/share/kibana/src/ui/public/images/kibana.svg && \
+#    cp kibana.svg /usr/share/kibana/src/ui/public/icons/kibana.svg && \
+#    cp elk.ico /usr/share/kibana/src/ui/public/assets/favicons/favicon.ico && \
+#    cp elk.ico /usr/share/kibana/src/ui/public/assets/favicons/favicon-16x16.png && \
+#    cp elk.ico /usr/share/kibana/src/ui/public/assets/favicons/favicon-32x32.png && \
 #
 # Setup user, groups and configs
     sed -i 's/#server.basePath: ""/server.basePath: "\/kibana"/' /usr/share/kibana/config/kibana.yml && \
@@ -50,8 +50,8 @@ RUN sed -i 's/dl-cdn/dl-2/g' /etc/apk/repositories && \
     echo "xpack.ml.enabled: false" >> /usr/share/kibana/config/kibana.yml && \
     echo "elasticsearch.requestTimeout: 60000" >> /usr/share/kibana/config/kibana.yml && \
     echo "elasticsearch.shardTimeout: 60000" >> /usr/share/kibana/config/kibana.yml && \
-    #rm -rf /usr/share/kibana/optimize/bundles/* && \
-    #/usr/share/kibana/bin/kibana --optimize --allow-root && \
+    rm -rf /usr/share/kibana/optimize/bundles/* && \
+    /usr/share/kibana/bin/kibana --optimize --allow-root && \
     addgroup -g 2000 kibana && \
     adduser -S -H -s /bin/ash -u 2000 -D -g 2000 kibana && \
     chown -R kibana:kibana /usr/share/kibana/ && \
