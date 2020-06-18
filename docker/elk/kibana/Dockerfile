@@ -20,8 +20,8 @@ RUN sed -i 's/dl-cdn/dl-2/g' /etc/apk/repositories && \
     tar xvfz kibana-$KB_VER-linux-x86_64.tar.gz --strip-components=1 -C /usr/share/kibana/ && \
 #
 # Kibana's bundled node does not work in alpine
-   # rm /usr/share/kibana/node/bin/node && \
-   # ln -s /usr/local/bin/node /usr/share/kibana/node/bin/node && \
+    rm /usr/share/kibana/node/bin/node && \
+    ln -s /usr/local/bin/node /usr/share/kibana/node/bin/node && \
 #
 # Add and move files
     cd /root/dist/ && \
