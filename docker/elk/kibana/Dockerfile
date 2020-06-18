@@ -1,5 +1,5 @@
-#FROM node:10.19.0-alpine
-FROM ubuntu:latest
+FROM node:10.19.0-alpine
+#FROM ubuntu:latest
 #
 # VARS
 ENV KB_VER=7.7.1
@@ -37,9 +37,9 @@ RUN sed -i 's/dl-cdn/dl-2/g' /etc/apk/repositories && \
     sed -i 's/#server.host: "localhost"/server.host: "0.0.0.0"/' /usr/share/kibana/config/kibana.yml && \
     sed -i 's/#elasticsearch.hosts: \["http:\/\/localhost:9200"\]/elasticsearch.hosts: \["http:\/\/elasticsearch:9200"\]/' /usr/share/kibana/config/kibana.yml && \
     sed -i 's/#server.rewriteBasePath: false/server.rewriteBasePath: false/' /usr/share/kibana/config/kibana.yml && \
-#    sed -i "s/#005571/#e20074/g" /usr/share/kibana/built_assets/css/plugins/kibana/index.css && \
-#    sed -i "s/#007ba4/#9e0051/g" /usr/share/kibana/built_assets/css/plugins/kibana/index.css && \
-#    sed -i "s/#00465d/#4f0028/g" /usr/share/kibana/built_assets/css/plugins/kibana/index.css && \
+    sed -i "s/#005571/#e20074/g" /usr/share/kibana/built_assets/css/plugins/kibana/index.css && \
+    sed -i "s/#007ba4/#9e0051/g" /usr/share/kibana/built_assets/css/plugins/kibana/index.css && \
+    sed -i "s/#00465d/#4f0028/g" /usr/share/kibana/built_assets/css/plugins/kibana/index.css && \
     echo "xpack.infra.enabled: false" >> /usr/share/kibana/config/kibana.yml && \ 
     echo "xpack.logstash.enabled: false" >> /usr/share/kibana/config/kibana.yml && \
     echo "xpack.canvas.enabled: false" >> /usr/share/kibana/config/kibana.yml && \
@@ -58,10 +58,10 @@ RUN sed -i 's/dl-cdn/dl-2/g' /etc/apk/repositories && \
     chown -R kibana:kibana /usr/share/kibana/ && \
 #
 # Clean up
-  #  apk del --purge aria2 && \
+    apk del --purge aria2 && \
     rm -rf /root/* && \
     rm -rf /tmp/* && \
-  #  rm -rf /var/cache/apk/*
+    rm -rf /var/cache/apk/*
 #
 # Healthcheck
 HEALTHCHECK --retries=10 CMD curl -s -XGET 'http://127.0.0.1:5601'
