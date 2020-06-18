@@ -14,7 +14,3 @@
 This dockerized version is part of the **[T-Pot community honeypot](http://dtag-dev-sec.github.io/)** of Deutsche Telekom AG.
 
 The `Dockerfiles` contain the blueprint for the dockerized elk stack and will be used to setup the docker images.  
-
-# T-Pot Dashboard
-
-![T-Pot Dashboard](doc/dashboard.png)
