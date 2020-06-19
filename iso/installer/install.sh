@@ -16,9 +16,9 @@ myREMOTESITES="https://hub.docker.com https://github.com https://pypi.python.org
 myPREINSTALLPACKAGES="aria2 apache2-utils cracklib-runtime curl dialog figlet fuse grc libcrack2 libpq-dev lsb-release netselect-apt net-tools software-properties-common toilet"
 myINSTALLPACKAGES="aria2 apache2-utils apparmor apt-transport-https aufs-tools bash-completion build-essential ca-certificates cgroupfs-mount cockpit console-setup console-setup-linux cracklib-runtime curl debconf-utils dialog dnsutils docker.io docker-compose ethtool fail2ban figlet genisoimage git glances grc haveged html2text htop iptables iw jq kbd libcrack2 libltdl7 libpam-google-authenticator man mosh multitail netselect-apt net-tools npm ntp openssh-server openssl pass pigz prips software-properties-common syslinux psmisc pv python3-pip toilet unattended-upgrades unzip vim wget wireless-tools wpasupplicant"
 myINFO="\
-#################################################
-### T-Pot Installer for Debian (Stable) - OPS ###
-#################################################
+###########################################
+### T-Pot Installer for Debian (Stable) ###
+###########################################
 
 Disclaimer:
 This script will install T-Pot on this system.
@@ -399,10 +399,10 @@ for i in "$@"
         echo
         echo "--conf=<Path to \"tpot.conf\">"
 	echo "  Use this if you want to automatically deploy a T-Pot instance (--type=auto implied)."
-        echo "  A configuration example is available in \"T-OPS/iso/installer/tpot.conf.dist\"."
+        echo "  A configuration example is available in \"tpotce/iso/installer/tpot.conf.dist\"."
         echo
         echo "--type=<[user, auto, iso]>"
-	echo "  user, use this if you want to manually install a T-Pot-OPS on a Debian (Stable) machine."
+	echo "  user, use this if you want to manually install a T-Pot on a Debian (Stable) machine."
         echo "  auto, implied if a configuration file is passed as an argument for automatic deployment."
         echo "  iso, use this if you are a T-Pot developer and want to install a T-Pot from a pre-compiled iso."
         echo

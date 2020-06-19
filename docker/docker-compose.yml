@@ -132,8 +132,7 @@ services:
 ## Kibana service
   kibana:
     build: elk/kibana/.
-    image: nu11secur1ty/kibana
-    #image: "dtagdevsec/kibana:2006"
+    image: "dtagdevsec/kibana:2006"
 
 ## Logstash service
   logstash:
