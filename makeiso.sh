@@ -10,7 +10,7 @@ myBACKTITLE="T-Pot - ISO Creator"
 # For stability reasons Debian Sid installation is built on a stable installer
 myMINIISOLINK="http://ftp.debian.org/debian/dists/buster/main/installer-amd64/current/images/netboot/mini.iso"
 myMINIISO="mini.iso"
-myTPOTISO="tpot.iso"
+myTPOTISO="Tp-OPS-honeypot-PWN-cracker.iso"
 myTPOTDIR="tpotiso"
 myTPOTSEED="iso/preseed/tpot.seed"
 myPACKAGES="dialog genisoimage syslinux syslinux-utils pv rsync udisks2 xorriso"
