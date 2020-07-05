@@ -1,5 +1,8 @@
 version: '2.3'
 
+networks:
+  dionaea_local:
+
 services:
 
 # Dionaea service
@@ -9,7 +12,8 @@ services:
     stdin_open: true
     tty: true
     restart: always
-    network_mode: "host"
+    networks:
+     - dionaea_local
     ports:
      - "20:20"
      - "21:21"
@@ -27,7 +31,8 @@ services:
      - "5060:5060/udp"
      - "5061:5061"
      - "27017:27017"
-    image: "dtagdevsec/dionaea:2006"
+    image: "nu11secur1ty/dionaea"
+    #image: "dtagdevsec/dionaea:2006"
     read_only: true
     volumes:
      - /data/dionaea/roots/ftp:/opt/dionaea/var/dionaea/roots/ftp
@@ -38,3 +43,4 @@ services:
      - /data/dionaea/binaries:/opt/dionaea/var/dionaea/binaries
      - /data/dionaea/log:/opt/dionaea/var/log
      - /data/dionaea/rtp:/opt/dionaea/var/dionaea/rtp
+

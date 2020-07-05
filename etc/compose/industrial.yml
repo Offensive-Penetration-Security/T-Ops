@@ -10,7 +10,9 @@ networks:
   conpot_local_kamstrup_382:
   cowrie_local:
   cyberchef_local:
+  dicompot_local:
   heralding_local:
+  honeysap_local:
   medpot_local:
   rdpy_local:
   ewsposter_local:
@@ -46,7 +48,7 @@ services:
      - "21:21"
      - "44818:44818"
      - "47808:47808"
-    image: "dtagdevsec/conpot:1903"
+    image: "nu11secur1ty/conpot"
     read_only: true
     volumes:
      - /data/conpot/log:/var/log/conpot
@@ -68,7 +70,7 @@ services:
     ports:
 #     - "161:161"
      - "2404:2404"
-    image: "dtagdevsec/conpot:1903"
+    image: "nu11secur1ty/conpot"
     read_only: true
     volumes:
      - /data/conpot/log:/var/log/conpot
@@ -89,7 +91,7 @@ services:
      - conpot_local_guardian_ast
     ports:
      - "10001:10001"
-    image: "dtagdevsec/conpot:1903"
+    image: "nu11secur1ty/conpot"
     read_only: true
     volumes:
      - /data/conpot/log:/var/log/conpot
@@ -110,7 +112,7 @@ services:
      - conpot_local_ipmi
     ports:
      - "623:623"
-    image: "dtagdevsec/conpot:1903"
+    image: "nu11secur1ty/conpot"
     read_only: true
     volumes:
      - /data/conpot/log:/var/log/conpot
@@ -132,7 +134,7 @@ services:
     ports:
      - "1025:1025"
      - "50100:50100"
-    image: "dtagdevsec/conpot:1903"
+    image: "nu11secur1ty/conpot"
     read_only: true
     volumes:
      - /data/conpot/log:/var/log/conpot
@@ -149,13 +151,30 @@ services:
     ports:
      - "22:22"
      - "23:23"
-    image: "dtagdevsec/cowrie:1903"
+    image: "nu11secur1ty/cowrie"
     read_only: true
     volumes:
      - /data/cowrie/downloads:/home/cowrie/cowrie/dl
      - /data/cowrie/keys:/home/cowrie/cowrie/etc
      - /data/cowrie/log:/home/cowrie/cowrie/log
      - /data/cowrie/log/tty:/home/cowrie/cowrie/log/tty
+
+# Dicompot service
+# Get the Horos Client for testing: https://horosproject.org/
+# Get Dicom images (CC BY 3.0): https://www.cancerimagingarchive.net/collections/
+# Put images (which must be in Dicom DCM format or it will not work!) into /data/dicompot/images
+  dicompot:
+    container_name: dicompot
+    restart: always
+    networks:
+     - dicompot_local
+    ports:
+     - "11112:11112"
+    image: "nu11secur1ty/dicompot"
+    read_only: true
+    volumes:
+     - /data/dicompot/log:/var/log/dicompot
+#     - /data/dicompot/images:/opt/dicompot/images
 
 # Heralding service
   heralding:
@@ -180,10 +199,22 @@ services:
     # - "3389:3389"
     # - "5432:5432"
      - "5900:5900"
-    image: "dtagdevsec/heralding:1903"
+    image: "nu11secur1ty/heralding"
     read_only: true
     volumes:
      - /data/heralding/log:/var/log/heralding
+
+# HoneySAP service
+  honeysap:
+    container_name: honeysap
+    restart: always
+    networks:
+     - honeysap_local
+    ports:
+     - "3299:3299"
+    image: "nu11secur1ty/honeysap"
+    volumes:
+     - /data/honeysap/log:/opt/honeysap/log
 
 # Honeytrap service
   honeytrap:
@@ -194,7 +225,7 @@ services:
     network_mode: "host"
     cap_add:
      - NET_ADMIN
-    image: "dtagdevsec/honeytrap:1903"
+    image: "nu11secur1ty/honeytrap"
     read_only: true
     volumes:
      - /data/honeytrap/attacks:/opt/honeytrap/var/attacks
@@ -209,7 +240,7 @@ services:
      - medpot_local
     ports:
      - "2575:2575"
-    image: "dtagdevsec/medpot:1903"
+    image: "nu11secur1ty/medpot"
     read_only: true
     volumes:
      - /data/medpot/log/:/var/log/medpot
@@ -230,7 +261,7 @@ services:
      - rdpy_local
     ports:
      - "3389:3389"
-    image: "dtagdevsec/rdpy:1903"
+    image: "nu11secur1ty/rdpy"
     read_only: true
     volumes:
      - /data/rdpy/log:/var/log/rdpy
@@ -240,12 +271,25 @@ services:
 #### NSM
 ##################
 
+# Fatt service
+  fatt:
+    container_name: fatt
+    restart: always
+    network_mode: "host"
+    cap_add:
+     - NET_ADMIN
+     - SYS_NICE
+     - NET_RAW
+    image: "nu11secur1ty/fatt"
+    volumes:
+     - /data/fatt/log:/opt/fatt/log
+
 # P0f service
   p0f:
     container_name: p0f
     restart: always
     network_mode: "host"
-    image: "dtagdevsec/p0f:1903"
+    image: "nu11secur1ty/p0f"
     read_only: true
     volumes:
      - /data/p0f/log:/var/log/p0f
@@ -262,7 +306,7 @@ services:
      - NET_ADMIN
      - SYS_NICE
      - NET_RAW
-    image: "dtagdevsec/suricata:1903"
+    image: "nu11secur1ty/suricata"
     volumes:
      - /data/suricata/log:/var/log/suricata
 
@@ -279,7 +323,7 @@ services:
      - cyberchef_local
     ports:
      - "127.0.0.1:64299:8000"
-    image: "dtagdevsec/cyberchef:1903"
+    image: "nu11secur1ty/cyberchef"
     read_only: true
 
 #### ELK
@@ -289,7 +333,7 @@ services:
     restart: always
     environment:
      - bootstrap.memory_lock=true
-     - ES_JAVA_OPTS=-Xms1024m -Xmx1024m
+     - ES_JAVA_OPTS=-Xms2048m -Xmx2048m
      - ES_TMPDIR=/tmp
     cap_add:
      - IPC_LOCK
@@ -303,7 +347,7 @@ services:
     mem_limit: 4g
     ports:
      - "127.0.0.1:64298:9200"
-    image: "dtagdevsec/elasticsearch:1903"
+    image: "nu11secur1ty/elasticsearch"
     volumes:
      - /data:/data
 
@@ -316,7 +360,7 @@ services:
         condition: service_healthy
     ports:
      - "127.0.0.1:64296:5601"
-    image: "dtagdevsec/kibana:1903"
+    image: "nu11secur1ty/kibana"
 
 ## Logstash service
   logstash:
@@ -327,7 +371,7 @@ services:
         condition: service_healthy
     env_file:
      - /opt/tpot/etc/compose/elk_environment
-    image: "dtagdevsec/logstash:1903"
+    image: "nu11secur1ty/logstash"
     volumes:
      - /data:/data
 
@@ -340,7 +384,7 @@ services:
         condition: service_healthy
     ports:
      - "127.0.0.1:64302:9100"
-    image: "dtagdevsec/head:1903"
+    image: "nu11secur1ty/head"
     read_only: true
 
 # Ewsposter service
@@ -360,7 +404,7 @@ services:
      - EWS_HPFEEDS_FORMAT=json
     env_file:
      - /opt/tpot/etc/compose/elk_environment
-    image: "dtagdevsec/ewsposter:1903"
+    image: "nu11secur1ty/ewsposter"
     volumes:
      - /data:/data
      - /data/ews/conf/ews.ip:/opt/ewsposter/ews.ip
@@ -369,22 +413,34 @@ services:
   nginx:
     container_name: nginx
     restart: always
+    environment:
+    ### If set to YES all changes within Heimdall will remain for the next start
+    ### Make sure to uncomment the corresponding volume statements below, or the setting will prevent a successful start of T-Pot.
+     - HEIMDALL_PERSIST=NO
     tmpfs:
      - /var/tmp/nginx/client_body
      - /var/tmp/nginx/proxy
      - /var/tmp/nginx/fastcgi
      - /var/tmp/nginx/uwsgi
-     - /var/tmp/nginx/scgi
+     - /var/tmp/nginx/scgi 
      - /run
+     - /var/log/php7/
+     - /var/lib/nginx/tmp:uid=100,gid=82 
+     - /var/lib/nginx/html/storage/logs:uid=100,gid=82
+     - /var/lib/nginx/html/storage/framework/views:uid=100,gid=82
     network_mode: "host"
     ports:
      - "64297:64297"
-    image: "dtagdevsec/nginx:1903"
+     - "127.0.0.1:64304:64304"
+    image: "nu11secur1ty/nginx"
     read_only: true
     volumes:
      - /data/nginx/cert/:/etc/nginx/cert/:ro
      - /data/nginx/conf/nginxpasswd:/etc/nginx/nginxpasswd:ro
      - /data/nginx/log/:/var/log/nginx/
+    ### Enable the following volumes if you set HEIMDALL_PERSIST=YES
+    # - /data/nginx/heimdall/database:/var/lib/nginx/html/database
+    # - /data/nginx/heimdall/storage:/var/lib/nginx/html/storage
 
 # Spiderfoot service
   spiderfoot:
@@ -394,6 +450,6 @@ services:
      - spiderfoot_local
     ports:
      - "127.0.0.1:64303:8080"
-    image: "dtagdevsec/spiderfoot:1903"
+    image: "nu11secur1ty/spiderfoot"
     volumes:
      - /data/spiderfoot/spiderfoot.db:/home/spiderfoot/spiderfoot.db

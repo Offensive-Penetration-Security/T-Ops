@@ -4,14 +4,14 @@
 export TERM=linux
 
 # Let's define some global vars
-myBACKTITLE="Tp-OPS-honeypot-PWN-cracker - ISO Creator"
+myBACKTITLE="T-Ops - ISO Creator"
 #myMINIISOLINK="http://ftp.debian.org/debian/dists/testing/main/installer-amd64/current/images/netboot/mini.iso"
 #myMINIISOLINK="https://d-i.debian.org/daily-images/amd64/daily/netboot/mini.iso"
 # For stability reasons Debian Sid installation is built on a stable installer
 myMINIISOLINK="http://ftp.debian.org/debian/dists/buster/main/installer-amd64/current/images/netboot/mini.iso"
 myMINIISO="mini.iso"
-myTPOTISO="Tp-OPS-honeypot-PWN-cracker.iso"
-myTPOTDIR="Tp-OPS-honeypot-PWN-cracker"
+myTPOTISO="tops05.iso"
+myTPOTDIR="tpotiso"
 myTPOTSEED="iso/preseed/tpot.seed"
 myPACKAGES="dialog genisoimage syslinux syslinux-utils pv rsync udisks2 xorriso"
 myPFXFILE="iso/installer/keys/8021x.pfx"
