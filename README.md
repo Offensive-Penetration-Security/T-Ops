@@ -16,7 +16,9 @@ https://0.0.0.0:64297/myhead/
 ![](https://github.com/Offensive-Penetration-Security/T-Ops/blob/master/wall/myhead.PNG)
 
 
-T-Ops 20.06 runs on Debian (Stable), is based heavily on
+T-Ops 20.07 runs on Debian (Stable), is based heavily on
+
+[dependencies]()
 
 [docker](https://www.docker.com/), [docker-compose](https://docs.docker.com/compose/)
 
