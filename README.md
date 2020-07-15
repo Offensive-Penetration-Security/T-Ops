@@ -19,6 +19,8 @@ https://0.0.0.0:64297/myhead/
 
 BR `Technical Manager` V.Varbanovski `@nu11secur1ty`
 
+**NETWORKING** ***WARNING:*** On the `V-ENV` you can not use `static` network setup! It's recommendation depending for all `docker containers`
+
 ------------------------------------------------------------------------------
 
 T-Ops 20.07 runs on Debian (Stable), is based heavily on
