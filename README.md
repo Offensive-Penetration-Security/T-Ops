@@ -20,6 +20,9 @@ https://0.0.0.0:64297/myhead/
 BR `Technical Manager` V.Varbanovski `@nu11secur1ty`
 
 - - - Upgrade procedure!
+
+***WARNING:*** `You will be prompted to give username and password, this is only for OPS team, the owners of Teapot-T-Ops!`
+
 ```bash
 cd /opt/tpot/
 systemctl stop tpot
