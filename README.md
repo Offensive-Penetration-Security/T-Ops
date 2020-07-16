@@ -19,6 +19,14 @@ https://0.0.0.0:64297/myhead/
 
 BR `Technical Manager` V.Varbanovski `@nu11secur1ty`
 
+- - - Upgrade procedure!
+```bash
+cd /opt/tpot/
+systemctl stop tpot
+./update.sh
+telinit 6
+```
+
 ------------------------------------------------------------------------------
 
 T-Ops 20.07 runs on Debian (Stable), is based heavily on
