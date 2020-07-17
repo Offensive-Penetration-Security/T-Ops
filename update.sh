@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/bash
+# @nu11secur1ty
 
 # Some global vars
 myCONFIGFILE="/opt/tpot/etc/tpot.yml"
