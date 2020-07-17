@@ -29,6 +29,13 @@ systemctl stop tpot
 ./update.sh
 telinit 6
 ```
+# WARNING:
+
+- - - Unauthorized users which they want to install the framework without permission will be stuck here!
+
+![](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/unauthorized.png)
+
+BR `Technical Manager` V.Varbanovski `@nu11secur1ty`
 
 ------------------------------------------------------------------------------
 
