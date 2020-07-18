@@ -1,7 +1,7 @@
 # Wall and Tools:
 ----------------------------------------------------------------------
 https://0.0.0.0:64297/
-![T-Ops](https://github.com/Offensive-Penetration-Security/T-Ops/blob/master/wall/wall.png)
+![T-Ops](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/wall.png)
 
 https://0.0.0.0:64297/kibana/
 ![kibanaOps](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/Kibana.PNG)
@@ -14,10 +14,6 @@ https://0.0.0.0/:64297/cyberchef/
 
 https://0.0.0.0:64297/myhead/
 ![](https://github.com/Offensive-Penetration-Security/T-Ops/blob/master/wall/myhead.PNG)
-
-**WARNING:** Every redirect link for `spiderfoot` and other tools setup are manual for the very curious!
-
-BR `Technical Manager` V.Varbanovski `@nu11secur1ty`
 
 - - - Upgrade procedure!
 
@@ -37,7 +33,7 @@ telinit 6
 
 - - - Update without permission!!!
 
-![](https://github.com/Offensive-Penetration-Security/T-Ops/blob/master/wall/update-T-Ops.png)
+![](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/update-T-Ops.png)
 
 BR `Technical Manager` V.Varbanovski `@nu11secur1ty`
 
