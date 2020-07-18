@@ -1,4 +1,9 @@
 # Wall and Tools:
+
+- Login
+
+![](https://github.com/Offensive-Penetration-Security/T-Ops/blob/master/wall/login.png)
+
 ----------------------------------------------------------------------
 https://0.0.0.0:64297/
 ![T-Ops](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/wall.png)
@@ -15,6 +20,11 @@ https://0.0.0.0/:64297/cyberchef/
 https://0.0.0.0:64297/myhead/
 ![](https://github.com/Offensive-Penetration-Security/T-Ops/blob/master/wall/myhead.PNG)
 
+<<<<<<< HEAD
+=======
+BR `Technical Manager` V.Varbanovski `@nu11secur1ty`
+
+>>>>>>> 08e96bea3b084d26f1a72cdaf94e998f7594a8e1
 - - - Upgrade procedure!
 
 ***WARNING:*** `You will be prompted to give username and password, this is only for OPS team, the owners of Teapot-T-Ops!`
