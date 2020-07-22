@@ -132,7 +132,7 @@ services:
   cyberchef:
     build: cyberchef/.
     image: "nu11secur1ty/cyberchef"
-
+    
 #### ELK
 ## Elasticsearch service
   elasticsearch:
