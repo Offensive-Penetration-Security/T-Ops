@@ -32,12 +32,10 @@ For Orders, please use contacts: ops-secur1ty@protonmail.com
 http://0.0.0.0:8082/
 ![](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/sky.PNG)
 
-
 - - - Incident Response
 
 http://0.0.0.0:9000/
 ![](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/inc/inc-dash.PNG)
-
 
 - - - Upgrade procedure!
 
