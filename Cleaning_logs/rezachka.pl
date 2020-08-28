@@ -3,31 +3,31 @@ use strict;
 use warnings;
 use diagnostics;
 
-#adbhoney  
-#citrixhoneypot  
-#cowrie    
-#dionaea     
-#elk        
-#ews   
-#glutton    
-#honeypy   
-#honeytrap  
-#medpot  
-#p0f   
-#spiderfoot  
-#tanner
-#ciscoasa  
-#conpot          
-#dicompot  
-#elasticpot  
-#emobility  
-#fatt  
-#heralding  
-#honeysap  
-#mailoney   
-#nginx   
-#rdpy  
-#suricata
+#adbhoney/log/*  
+#citrixhoneypot/log/*  
+#cowrie/log/*   
+#dionaea/log/*     
+#elk/log/*        
+#ews/log/*   
+#glutton/log/*    
+#honeypy/log/*   
+#honeytrap/log/*  
+#medpot/log/*  
+#p0f/log/*   
+#spiderfoot/log/*  
+#tanner/log/*
+#ciscoasa/log/*  
+#conpot/log/*          
+#dicompot/log/*  
+#elasticpot/log/*  
+#emobility/log/*  
+#fatt/log/*  
+#heralding/log/*  
+#honeysap/log/*  
+#mailoney/log/*   
+#nginx/log/*   
+#rdpy/log/*  
+#suricata/log/*
 
 my $al = `rm -rf suricata/log/*`;
 my $bka = `rm -rf`;
