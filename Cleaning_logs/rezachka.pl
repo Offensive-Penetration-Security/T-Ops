@@ -29,7 +29,7 @@ use diagnostics;
 #rdpy/log/*  
 #suricata/log/*
 
-
+# modules cleaning logs
 my $j = `rm -rf adbhoney/log/*`;
 my $k = `rm -rf citrixhoneypot/log/*`;
 my $l = `rm -rf cowrie/log/*`;
