@@ -29,24 +29,17 @@ use diagnostics;
 #rdpy/log/*  
 #suricata/log/*
 
-my $al = `rm -rf suricata/log/*`;
-my $bka = `rm -rf`;
-my $c = `rm -rf`;
-my $d = `rm -rf`;
-my $e = `rm -rf`;
-my $f = `rm -rf`;
-my $g = `rm -rf`;
-my $i = `rm -rf`;
-my $j = `rm -rf`;
-my $k = `rm -rf`;
-my $l = `rm -rf`;
-my $m = `rm -rf`;
-my $n = `rm -rf`;
-my $o = `rm -rf`;
-my $p = `rm -rf`;
-my $q = `rm -rf`;
-my $r = `rm -rf`;
-my $s = `rm -rf`;
+
+my $j = `rm -rf adbhoney/log/*`;
+my $k = `rm -rf citrixhoneypot/log/*`;
+my $l = `rm -rf cowrie/log/*`;
+my $m = `rm -rf dionaea/log/*`;
+my $n = `rm -rf elk/log/*`;
+my $o = `rm -rf ews/log/*`;
+my $p = `rm -rf glutton/log/*`;
+my $q = `rm -rf honeypy/log/*`;
+my $r = `rm -rf honeytrap/log/*`;
+my $s = `rm -rf medpot/log/*`;
 my $t = `rm -rf p0f/log/*`;
 my $u = `rm -rf spiderfoot/log/*`;
 my $v = `rm -rf tanner/log/*`;
@@ -61,3 +54,4 @@ my $rfa = `rm -rf honeysap/log/*`;
 my $tras = `rm -rf mailoney/log/*`;
 my $man = `rm -rf nginx/log/*`;
 my $ksh = `rm -rf rdpy/log/*`;
+my $al = `rm -rf suricata/log/*`;
