@@ -6,36 +6,28 @@
 
 ----------------------------------------------------------------------
 
-https://0.0.0.0:64297/
-![T-Ops](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/T-Ops.PNG)
+- - - Thief Hunting
 
-https://0.0.0.0:64297/kibana/
 ![kibanaOps](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/Kibana.PNG)
 
-https://0.0.0.0:64297/spiderfoot/
+- - - Threat Intelligence
+
 ![spiderfoot](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/sp.PNG)
+
+
+- - - Incident Response
+
+![](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/inc/inc-dash.PNG)
 
 
 ----------------------------------------------------------------------------------
 
-***Post installing Tools*** for`dvanced`users, and for those which order them!
-For Orders, please use contacts: ops-secur1ty@protonmail.com
-
-- - - Net analis
-
-http://0.0.0.0:8082/
-![](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/sky.PNG)
-
-- - - Incident Response
-
-http://0.0.0.0:9000/
-![](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/inc/inc-dash.PNG)
 
 - - - Upgrade procedure!
 
 ***WARNING:*** `You will be prompted to give username and password, this is only for OPS team, the owners of Teapot-T-Ops!`
 
-**FOR PROD** = The ports: `64297`, `64294`, `9000` and `http://0.0.0.0:8082` are MUST be Filtered, for outside!
+**FOR PROD** = The ports: `64297`, `64294`, `9000` are MUST be Filtered, for outside!
 
 ```bash
 cd /opt/tpot/
