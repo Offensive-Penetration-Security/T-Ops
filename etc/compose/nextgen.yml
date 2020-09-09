@@ -23,7 +23,7 @@ networks:
   rdpy_local:
   tanner_local:
   ewsposter_local:
-  #spiderfoot_local:
+  # spiderfoot_local:
 
 services:
 
