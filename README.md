@@ -1,57 +1,19 @@
-# Wall and Tools:
+![T-Ops](doc/T-Ops.png)
 
-- Login
+## WELCOME to ***T-Ops:***
 
-![](https://github.com/Offensive-Penetration-Security/T-Ops/blob/master/wall/T-Ops.PNG)
+## Based on ***https://github.com/telekom-security/tpotce***
 
-----------------------------------------------------------------------
-
-- - - Thief Hunting
-
-![kibanaOps](https://github.com/Offensive-Penetration-Security/T-Ops/blob/master/wall/Kibana.PNG)
-
-- - - Threat Intelligence
-
-![spiderfoot](https://github.com/Offensive-Penetration-Security/T-Ops/blob/master/wall/sp.PNG)
-
-
-- - - Incident Response
-
-![](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/inc/inc-dash.PNG)
-
-
-----------------------------------------------------------------------------------
-
-
-- - - Upgrade procedure!
-
-***WARNING:*** `You will be prompted to give username and password, this is only for OPS team, the owners of Teapot-T-Ops!`
-
-**FOR PROD** = The ports: `64297`, `64294`, `9000` are MUST be Filtered, for outside!
-
-```bash
-cd /opt/tpot/
-systemctl stop tpot
-./update.sh
-telinit 6
+- - - Configuration
 ```
-# WARNING:
+docker/
+etc/
+iso/
+install.sh
+makeiso.sh
+```
 
-- - - Unauthorized users which they want to install the framework without permission will be stuck here!
-
-![](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/unauthorized.png)
-
-- - - Update without permission!!!
-
-![](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/update-T-Ops.png)
-
-BR `Technical Manager` V.Varbanovski `@nu11secur1ty`
-
-------------------------------------------------------------------------------
-
-T-Ops 20.07 runs on Debian (Stable), is based heavily on
-
-[dependencies](https://github.com/Offensive-Penetration-Security/T-Ops/blob/master/dependency.md)
+T-Ops 20.06.3 runs on Debian (Stable), is based heavily on
 
 [docker](https://www.docker.com/), [docker-compose](https://docs.docker.com/compose/)
 
@@ -70,6 +32,7 @@ and includes dockerized versions of the following honeypots
 * [honeypy](https://github.com/foospidy/HoneyPy),
 * [honeysap](https://github.com/SecureAuthCorp/HoneySAP),
 * [honeytrap](https://github.com/armedpot/honeytrap/),
+* [ipphoney](https://gitlab.com/bontchev/ipphoney),
 * [mailoney](https://github.com/awhitehatter/mailoney),
 * [medpot](https://github.com/schmalle/medpot),
 * [rdpy](https://github.com/citronneur/rdpy),
@@ -77,11 +40,11 @@ and includes dockerized versions of the following honeypots
 * [tanner](http://mushmush.org/)
 
 
-Furthermore T-Pot includes the following tools
+Furthermore T-Ops includes the following tools
 
 * [Cockpit](https://cockpit-project.org/running) for a lightweight, webui for docker, os, real-time performance monitoring and web terminal.
 * [Cyberchef](https://gchq.github.io/CyberChef/) a web app for encryption, encoding, compression and data analysis.
-* [ELK stack](https://www.elastic.co/videos) to beautifully visualize all the events captured by T-Pot.
+* [ELK stack](https://www.elastic.co/videos) to beautifully visualize all the events captured by T-Ops.
 * [Elasticsearch Head](https://mobz.github.io/elasticsearch-head/) a web front end for browsing and interacting with an Elastic Search cluster.
 * [Fatt](https://github.com/0x4D31/fatt) a pyshark based script for extracting network metadata and fingerprints from pcap files and live network traffic.
 * [Spiderfoot](https://github.com/smicallef/spiderfoot) a open source intelligence automation tool.
@@ -89,8 +52,8 @@ Furthermore T-Pot includes the following tools
 
 
 # TL;DR
-1. Meet the [system requirements](#requirements). The T-Pot installation needs at least 8 GB RAM and 128 GB free disk space as well as a working (outgoing non-filtered) internet connection.
-2. Download the T-Pot ISO from [GitHub](https://github.com/dtag-dev-sec/tpotce/releases) or [create it yourself](#createiso).
+1. Meet the [system requirements](#requirements). The T-Ops installation needs at least 8 GB RAM and 128 GB free disk space as well as a working (outgoing non-filtered) internet connection.
+2. Download the T-Ops ISO from [GitHub](https://github.com/telekom-security/tpotce/releases) or [create it yourself](#createiso).
 3. Install the system in a [VM](#vm) or on [physical hardware](#hw) with [internet access](#placement).
 4. Enjoy your favorite beverage - [watch](https://sicherheitstacho.eu) and [analyze](#kibana).
 
@@ -114,7 +77,7 @@ Furthermore T-Pot includes the following tools
 - [Updates](#updates)
 - [Options](#options)
   - [SSH and web access](#ssh)
-  - [T-Pot Landing Page](#heimdall)
+  - [T-Ops Landing Page](#heimdall)
   - [Kibana Dashboard](#kibana)
   - [Tools](#tools)
   - [Maintenance](#maintenance)
@@ -132,11 +95,11 @@ Furthermore T-Pot includes the following tools
 <a name="concept"></a>
 # Technical Concept
 
-T-Pot is based on the Debian (Stable) network installer.
+T-Ops is based on the Debian (Stable) network installer.
 The honeypot daemons as well as other support components are [dockered](http://docker.io).
-This allows T-Pot to run multiple honeypot daemons and tools on the same network interface while maintaining a small footprint and constrain each honeypot within its own environment.
+This allows T-Ops to run multiple honeypot daemons and tools on the same network interface while maintaining a small footprint and constrain each honeypot within its own environment.
 
-In T-Pot we combine the dockerized honeypots ...
+In T-Ops we combine the dockerized honeypots ...
 * [adbhoney](https://github.com/huuck/ADBHoney),
 * [ciscoasa](https://github.com/Cymmetria/ciscoasa_honeypot),
 * [citrixhoneypot](https://github.com/MalwareTech/CitrixHoneypot),
@@ -150,6 +113,7 @@ In T-Pot we combine the dockerized honeypots ...
 * [honeypy](https://github.com/foospidy/HoneyPy),
 * [honeysap](https://github.com/SecureAuthCorp/HoneySAP),
 * [honeytrap](https://github.com/armedpot/honeytrap/),
+* [ipphoney](https://gitlab.com/bontchev/ipphoney),
 * [mailoney](https://github.com/awhitehatter/mailoney),
 * [medpot](https://github.com/schmalle/medpot),
 * [rdpy](https://github.com/citronneur/rdpy),
@@ -159,7 +123,7 @@ In T-Pot we combine the dockerized honeypots ...
 ... with the following tools ...
 * [Cockpit](https://cockpit-project.org/running) for a lightweight, webui for docker, os, real-time performance monitoring and web terminal.
 * [Cyberchef](https://gchq.github.io/CyberChef/) a web app for encryption, encoding, compression and data analysis.
-* [ELK stack](https://www.elastic.co/videos) to beautifully visualize all the events captured by T-Pot.
+* [ELK stack](https://www.elastic.co/videos) to beautifully visualize all the events captured by T-Ops.
 * [Elasticsearch Head](https://mobz.github.io/elasticsearch-head/) a web front end for browsing and interacting with an Elastic Search cluster.
 * [Fatt](https://github.com/0x4D31/fatt) a pyshark based script for extracting network metadata and fingerprints from pcap files and live network traffic.
 * [Spiderfoot](https://github.com/smicallef/spiderfoot) a open source intelligence automation tool.
@@ -169,7 +133,7 @@ In T-Pot we combine the dockerized honeypots ...
 
 ![Architecture](doc/architecture.png)
 
-While data within docker containers is volatile T-Pot ensures a default 30 day persistence of all relevant honeypot and tool data in the well known `/data` folder and sub-folders. The persistence configuration may be adjusted in `/opt/tpot/etc/logrotate/logrotate.conf`. Once a docker container crashes, all other data produced within its environment is erased and a fresh instance is started from the corresponding docker image.<br>
+While data within docker containers is volatile T-Ops ensures a default 30 day persistence of all relevant honeypot and tool data in the well known `/data` folder and sub-folders. The persistence configuration may be adjusted in `/opt/tpot/etc/logrotate/logrotate.conf`. Once a docker container crashes, all other data produced within its environment is erased and a fresh instance is started from the corresponding docker image.<br>
 
 Basically, what happens when the system is booted up is the following:
 
@@ -177,11 +141,11 @@ Basically, what happens when the system is booted up is the following:
 - start all the necessary services (i.e. cockpit, docker, etc.)
 - start all docker containers via docker-compose (honeypots, nms, elk, etc.)
 
-The T-Pot project provides all the tools and documentation necessary to build your own honeypot system and contribute to our [Sicherheitstacho](https://sicherheitstacho.eu).
+The T-Ops project provides all the tools and documentation necessary to build your own honeypot system and contribute to our [Sicherheitstacho](https://sicherheitstacho.eu).
 
-The source code and configuration files are fully stored in the T-Pot GitHub repository. The docker images are preconfigured for the T-Pot environment. If you want to run the docker images separately, make sure you study the docker-compose configuration (`/opt/tpot/etc/tpot.yml`) and the T-Pot systemd script (`/etc/systemd/system/tpot.service`), as they provide a good starting point for implementing changes.
+The source code and configuration files are fully stored in the T-Ops GitHub repository. The docker images are preconfigured for the T-Ops environment. If you want to run the docker images separately, make sure you study the docker-compose configuration (`/opt/tpot/etc/tpot.yml`) and the T-Ops systemd script (`/etc/systemd/system/tpot.service`), as they provide a good starting point for implementing changes.
 
-The individual docker configurations are located in the [docker folder](https://github.com/dtag-dev-sec/tpotce/tree/master/docker).
+The individual docker configurations are located in the [docker folder](https://github.com/telekom-security/tpotce/tree/master/docker).
 
 <a name="requirements"></a>
 # System Requirements
@@ -195,7 +159,7 @@ Depending on the installation type, whether installing on [real hardware](#hardw
 
 <a name="types"></a>
 # Installation Types
-There are prebuilt installation types available each focussing on different aspects to get you started right out of the box. The docker-compose files are located in `/opt/tpot/etc/compose`. If you want to build your own compose file just create a new one (based on the layout and settings of the prebuilds) in `/opt/tpot/etc/compose` and run `tped.sh` afterwards to point T-Pot to the new compose file and run you personalized edition.
+There are prebuilt installation types available each focussing on different aspects to get you started right out of the box. The docker-compose files are located in `/opt/tpot/etc/compose`. If you want to build your own compose file just create a new one (based on the layout and settings of the prebuilds) in `/opt/tpot/etc/compose` and run `tped.sh` afterwards to point T-Ops to the new compose file and run you personalized edition.
 
 ##### Standard
 - Honeypots: adbhoney, ciscoasa, citrixhoneypot, conpot, cowrie, dicompot, dionaea, elasticpot, heralding, honeysap, honeytrap, mailoney, medpot, rdpy, snare & tanner
@@ -219,7 +183,7 @@ There are prebuilt installation types available each focussing on different aspe
 
 
 ##### NextGen
-- Honeypots: adbhoney, ciscoasa, citrixhoneypot, conpot, cowrie, dicompot, dionaea, glutton, heralding, honeypy, honeysap, mailoney, medpot, rdpy, snare & tanner
+- Honeypots: adbhoney, ciscoasa, citrixhoneypot, conpot, cowrie, dicompot, dionaea, glutton, heralding, honeypy, honeysap, ipphoney, mailoney, medpot, rdpy, snare & tanner
 - Tools: cockpit, cyberchef, ELK, fatt, elasticsearch head, ewsposter, nginx / heimdall, spiderfoot, p0f & suricata
 
 
@@ -230,20 +194,20 @@ There are prebuilt installation types available each focussing on different aspe
 
 <a name="installation"></a>
 # Installation
-The installation of T-Pot is straight forward and heavily depends on a working, transparent and non-proxied up and running internet connection. Otherwise the installation **will fail!**
+The installation of T-Ops is straight forward and heavily depends on a working, transparent and non-proxied up and running internet connection. Otherwise the installation **will fail!**
 
-Firstly, decide if you want to download the prebuilt installation ISO image from [GitHub](https://github.com/dtag-dev-sec/tpotce/releases), [create it yourself](#createiso) ***or*** [post-install on an existing Debian 10 (Buster)](#postinstall).
+Firstly, decide if you want to download the prebuilt installation ISO image from [GitHub](https://github.com/telekom-security/tpotce/releases), [create it yourself](#createiso) ***or*** [post-install on an existing Debian 10 (Buster)](#postinstall).
 
 Secondly, decide where you the system to run: [real hardware](#hardware) or in a [virtual machine](#vm)?
 
 <a name="prebuilt"></a>
 ## Prebuilt ISO Image
-An installation ISO image is available for download (~50MB), which is created by the [ISO Creator](https://github.com/dtag-dev-sec/tpotce) you can use yourself in order to create your own image. It will basically just save you some time downloading components and creating the ISO image.
-You can download the prebuilt installation ISO from [GitHub](https://github.com/dtag-dev-sec/tpotce/releases) and jump to the [installation](#vm) section.
+An installation ISO image is available for download (~50MB), which is created by the [ISO Creator](https://github.com/telekom-security/tpotce) you can use yourself in order to create your own image. It will basically just save you some time downloading components and creating the ISO image.
+You can download the prebuilt installation ISO from [GitHub](https://github.com/telekom-security/tpotce/releases) and jump to the [installation](#vm) section.
 
 <a name="createiso"></a>
 ## Create your own ISO Image
-For transparency reasons and to give you the ability to customize your install you use the [ISO Creator](https://github.com/dtag-dev-sec/tpotce) that enables you to create your own ISO installation image.
+For transparency reasons and to give you the ability to customize your install you use the [ISO Creator](https://github.com/telekom-security/tpotce) that enables you to create your own ISO installation image.
 
 **Requirements to create the ISO image:**
 - Debian 10 as host system (others *may* work, but *remain* untested)
@@ -255,27 +219,27 @@ For transparency reasons and to give you the ability to customize your install y
 
 1. Clone the repository and enter it.
 ```
-git clone https://github.com/dtag-dev-sec/tpotce
-cd tpotce
+git https://github.com/nu11secur1ty/T-Ops
+cd T-Ops
 ```
 2. Run the `makeiso.sh` script to build the ISO image.
-The script will download and install dependencies necessary to build the image on the invoking machine. It will further download the ubuntu network installer image (~50MB) which T-Pot is based on.
+The script will download and install dependencies necessary to build the image on the invoking machine. It will further download the ubuntu network installer image (~50MB) which T-Ops is based on.
 ```
 sudo ./makeiso.sh
 ```
-After a successful build, you will find the ISO image `tpot.iso` along with a SHA256 checksum `tpot.sha256` in your folder.
+After a successful build, you will find the ISO image `tops.iso` along with a SHA256 checksum `tpot.sha256` in your folder.
 
 <a name="vm"></a>
 ## Running in VM
-You may want to run T-Pot in a virtualized environment. The virtual system configuration depends on your virtualization provider.
+You may want to run T-Ops in a virtualized environment. The virtual system configuration depends on your virtualization provider.
 
-T-Pot is successfully tested with [VirtualBox](https://www.virtualbox.org) and [VMWare](http://www.vmware.com) with just little modifications to the default machine configurations.
+T-Ops is successfully tested with [VirtualBox](https://www.virtualbox.org) and [VMWare](http://www.vmware.com) with just little modifications to the default machine configurations.
 
 It is important to make sure you meet the [system requirements](#requirements) and assign virtual harddisk and RAM according to the requirements while making sure networking is bridged.
 
 You need to enable promiscuous mode for the network interface for fatt, suricata and p0f to work properly. Make sure you enable it during configuration.
 
-If you want to use a wifi card as a primary NIC for T-Pot, please be aware that not all network interface drivers support all wireless cards. In VirtualBox e.g. you have to choose the *"MT SERVER"* model of the NIC.
+If you want to use a wifi card as a primary NIC for T-Ops, please be aware that not all network interface drivers support all wireless cards. In VirtualBox e.g. you have to choose the *"MT SERVER"* model of the NIC.
 
 Lastly, mount the `tpot.iso` ISO to the VM and continue with the installation.<br>
 
@@ -283,10 +247,10 @@ You can now jump [here](#firstrun).
 
 <a name="hardware"></a>
 ## Running on Hardware
-If you decide to run T-Pot on dedicated hardware, just follow these steps:
+If you decide to run T-Ops on dedicated hardware, just follow these steps:
 
 1. Burn a CD from the ISO image or make a bootable USB stick using the image. <br>
-Whereas most CD burning tools allow you to burn from ISO images, the procedure to create a bootable USB stick from an ISO image depends on your system. There are various Windows GUI tools available, e.g. [this tip](http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows) might help you.<br> On [Linux](http://askubuntu.com/questions/59551/how-to-burn-a-iso-to-a-usb-device) or [MacOS](http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-mac-osx) you can use the tool *dd* or create the USB stick with T-Pot's [ISO Creator](https://github.com/dtag-dev-sec).
+Whereas most CD burning tools allow you to burn from ISO images, the procedure to create a bootable USB stick from an ISO image depends on your system. There are various Windows GUI tools available, e.g. [this tip](http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows) might help you.<br> On [Linux](http://askubuntu.com/questions/59551/how-to-burn-a-iso-to-a-usb-device) or [MacOS](http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-mac-osx) you can use the tool *dd* or create the USB stick with T-Ops's [ISO Creator](https://github.com/telekom-security).
 2. Boot from the USB stick and install.
 
 *Please note*: Limited tests are performed for the Intel NUC platform other hardware platforms **remain untested**. There is no hardware support provided of any kind.
@@ -299,13 +263,13 @@ In some cases it is necessary to install Debian 10 (Buster) on your own:
  - Within your company you have to setup special policies, software etc.
  - You just like to stay on top of things.
 
-The T-Pot Universal Installer will upgrade the system and install all required T-Pot dependencies.
+The T-Ops Universal Installer will upgrade the system and install all required T-Ops dependencies.
 
 Just follow these steps:
 
 ```
-git clone https://github.com/dtag-dev-sec/tpotce
-cd tpotce/iso/installer/
+git clone https://github.com/nu11secur1ty/T-Ops
+cd T-Ops/iso/installer/
 ./install.sh --type=user
 ```
 
@@ -313,13 +277,13 @@ The installer will now start and guide you through the install process.
 
 <a name="postinstallauto"></a>
 ## Post-Install Auto
-You can also let the installer run automatically if you provide your own `tpot.conf`. An example is available in `tpotce/iso/installer/tpot.conf.dist`. This should make things easier in case you want to automate the installation i.e. with **Ansible**.
+You can also let the installer run automatically if you provide your own `tpot.conf`. An example is available in `T-Ops/iso/installer/tpot.conf.dist`. This should make things easier in case you want to automate the installation i.e. with **Ansible**.
 
 Just follow these steps while adjusting `tpot.conf` to your needs:
 
 ```
-git clone https://github.com/dtag-dev-sec/tpotce
-cd tpotce/iso/installer/
+git clone https://github.com/nu11secur1ty/T-Ops
+cd T-Ops/iso/installer/
 cp tpot.conf.dist tpot.conf
 ./install.sh --type=auto --conf=tpot.conf
 ```
@@ -332,36 +296,36 @@ Located in the [`cloud`](cloud) folder.
 Currently there are examples with Ansible & Terraform.  
 If you would like to contribute, you can add other cloud deployments like Chef or Puppet or extend current methods with other cloud providers.
 
-*Please note*: Cloud providers usually offer adjusted Debian OS images, which might not be compatible with T-Pot. There is no cloud provider support provided of any kind.
+*Please note*: Cloud providers usually offer adjusted Debian OS images, which might not be compatible with T-Ops. There is no cloud provider support provided of any kind.
 
 <a name="ansible"></a>
 ### Ansible Deployment
-You can find an [Ansible](https://www.ansible.com/) based T-Pot deployment in the [`cloud/ansible`](cloud/ansible) folder.  
+You can find an [Ansible](https://www.ansible.com/) based T-Ops deployment in the [`cloud/ansible`](cloud/ansible) folder.  
 The Playbook in the [`cloud/ansible/openstack`](cloud/ansible/openstack) folder is reusable for all **OpenStack** clouds out of the box.
 
-It first creates all resources (security group, network, subnet, router), deploys a new server and then installs and configures T-Pot.
+It first creates all resources (security group, network, subnet, router), deploys a new server and then installs and configures T-Ops.
 
 You can have a look at the Playbook and easily adapt the deploy role for other [cloud providers](https://docs.ansible.com/ansible/latest/modules/list_of_cloud_modules.html).
 
-*Please note*: Cloud providers usually offer adjusted Debian OS images, which might not be compatible with T-Pot. There is no cloud provider support provided of any kind.
+*Please note*: Cloud providers usually offer adjusted Debian OS images, which might not be compatible with T-Ops. There is no cloud provider support provided of any kind.
 
 <a name="terraform"></a>
 ### Terraform Configuration
 
 You can find [Terraform](https://www.terraform.io/) configuration in the [`cloud/terraform`](cloud/terraform) folder.
 
-This can be used to launch a virtual machine, bootstrap any dependencies and install T-Pot in a single step.
+This can be used to launch a virtual machine, bootstrap any dependencies and install T-Ops in a single step.
 
 Configuration for **Amazon Web Services** (AWS) and **Open Telekom Cloud** (OTC) is currently included.  
 This can easily be extended to support other [Terraform providers](https://www.terraform.io/docs/providers/index.html).
 
-*Please note*: Cloud providers usually offer adjusted Debian OS images, which might not be compatible with T-Pot. There is no cloud provider support provided of any kind.
+*Please note*: Cloud providers usually offer adjusted Debian OS images, which might not be compatible with T-Ops. There is no cloud provider support provided of any kind.
 
 <a name="firstrun"></a>
 ## First Run
-The installation requires very little interaction, only a locale and keyboard setting have to be answered for the basic linux installation. While the system reboots maintain the active internet connection. The T-Pot installer will start and ask you for an installation type, password for the **tsec** user and credentials for a **web user**. Everything else will be configured automatically. All docker images and other componenents will be downloaded. Depending on your network connection and the chosen installation type, the installation may take some time. With 250Mbit down / 40Mbit up the installation is usually finished within 15-30 minutes.
+The installation requires very little interaction, only a locale and keyboard setting have to be answered for the basic linux installation. While the system reboots maintain the active internet connection. The T-Ops installer will start and ask you for an installation type, password for the **tsec** user and credentials for a **web user**. Everything else will be configured automatically. All docker images and other componenents will be downloaded. Depending on your network connection and the chosen installation type, the installation may take some time. With 250Mbit down / 40Mbit up the installation is usually finished within 15-30 minutes.
 
-Once the installation is finished, the system will automatically reboot and you will be presented with the T-Pot login screen. On the console you may login with:
+Once the installation is finished, the system will automatically reboot and you will be presented with the T-Ops login screen. On the console you may login with:
 
 - user: **[tsec or user]** *you chose during one of the post install methods*
 - pass: **[password]** *you chose during the installation*
@@ -380,29 +344,29 @@ You can also login from your browser and access the Web UI: `https://<your.ip>:6
 
 <a name="placement"></a>
 # System Placement
-Make sure your system is reachable through a network you suspect intruders in / from (i.e. the internet). Otherwise T-Pot will most likely not capture any attacks, other than the ones from your internal network! For starters it is recommended to put T-Pot in an unfiltered zone, where all TCP and UDP traffic is forwarded to T-Pot's network interface. However to avoid fingerprinting you can put T-Pot behind a firewall and forward all TCP / UDP traffic in the port range of 1-64000 to T-Pot while allowing access to ports > 64000 only from trusted IPs.
+Make sure your system is reachable through a network you suspect intruders in / from (i.e. the internet). Otherwise T-Ops will most likely not capture any attacks, other than the ones from your internal network! For starters it is recommended to put T-Ops in an unfiltered zone, where all TCP and UDP traffic is forwarded to T-Ops's network interface. However to avoid fingerprinting you can put T-Ops behind a firewall and forward all TCP / UDP traffic in the port range of 1-64000 to T-Ops while allowing access to ports > 64000 only from trusted IPs.
 
 A list of all relevant ports is available as part of the [Technical Concept](#concept)
 <br>
 
 Basically, you can forward as many TCP ports as you want, as glutton & honeytrap dynamically bind any TCP port that is not covered by the other honeypot daemons.
 
-In case you need external Admin UI access, forward TCP port 64294 to T-Pot, see below.
-In case you need external SSH access, forward TCP port 64295 to T-Pot, see below.
-In case you need external Web UI access, forward TCP port 64297 to T-Pot, see below.
+In case you need external Admin UI access, forward TCP port 64294 to T-Ops, see below.
+In case you need external SSH access, forward TCP port 64295 to T-Ops, see below.
+In case you need external Web UI access, forward TCP port 64297 to T-Ops, see below.
 
-T-Pot requires outgoing git, http, https connections for updates (Debian, Docker, GitHub, PyPi), attack submission (ewsposter, hpfeeds) and CVE / IP reputation translation map updates (logstash, listbot). Ports and availability may vary based on your geographical location. Also during first install outgoing ICMP / TRACEROUTE is required additionally to find the closest and fastest mirror to you.
+T-Ops requires outgoing git, http, https connections for updates (Debian, Docker, GitHub, PyPi), attack submission (ewsposter, hpfeeds) and CVE / IP reputation translation map updates (logstash, listbot). Ports and availability may vary based on your geographical location. Also during first install outgoing ICMP / TRACEROUTE is required additionally to find the closest and fastest mirror to you.
 
 <a name="updates"></a>
 # Updates
-For the ones of you who want to live on the bleeding edge of T-Pot development we introduced an update feature which will allow you to update all T-Pot relevant files to be up to date with the T-Pot master branch.
-**If you made any relevant changes to the T-Pot relevant config files make sure to create a backup first.**
+For the ones of you who want to live on the bleeding edge of T-Ops development we introduced an update feature which will allow you to update all T-Ops relevant files to be up to date with the T-Ops master branch.
+**If you made any relevant changes to the T-Ops relevant config files make sure to create a backup first.**
 
 The Update script will:
- - **mercilessly** overwrite local changes to be in sync with the T-Pot master branch
+ - **mercilessly** overwrite local changes to be in sync with the T-Ops master branch
  - upgrade the system to the packages available in Debian (Stable)
- - update all resources to be in-sync with the T-Pot master branch
- - ensure all T-Pot relevant system files will be patched / copied into the original T-Pot state
+ - update all resources to be in-sync with the T-Ops master branch
+ - ensure all T-Ops relevant system files will be patched / copied into the original T-Ops state
  - restore your custom ews.cfg and HPFEED settings from `/data/ews/conf`
 
 You simply run the update script:
@@ -433,7 +397,7 @@ You can also add two factor authentication to Cockpit just by running `2fa.sh` o
 ![Cockpit Terminal](doc/cockpit3.png)
 
 <a name="heimdall"></a>
-## T-Pot Landing Page 
+## T-Ops Landing Page 
 Just open a web browser and connect to `https://<your.ip>:64297`, enter
 
 - user: **[user]** *you chose during the installation*
@@ -441,7 +405,7 @@ Just open a web browser and connect to `https://<your.ip>:64297`, enter
 
 and the **Landing Page** will automagically load. Now just click on the tool / link you want to start.
 
-![Dashbaord](https://github.com/nu11secur1ty/T-Ops/blob/master/wall/wall.png)
+![Dashbaord](doc/heimdall.png)
 
 <a name="kibana"></a>
 ## Kibana Dashboard
@@ -465,17 +429,17 @@ The following web based tools are included to improve and ease up daily tasks.
 
 <a name="maintenance"></a>
 ## Maintenance
-T-Pot is designed to be low maintenance. Basically, there is nothing you have to do but let it run.
+T-Ops is designed to be low maintenance. Basically, there is nothing you have to do but let it run.
 
 If you run into any problems, a reboot may fix it :bowtie:
 
-If new versions of the components involved appear new docker images will be created and distributed. New images will be available from docker hub and downloaded automatically to T-Pot and activated accordingly.  
+If new versions of the components involved appear new docker images will be created and distributed. New images will be available from docker hub and downloaded automatically to T-Ops and activated accordingly.  
 
 <a name="submission"></a>
 ## Community Data Submission
-T-Pot is provided in order to make it accessible to all interested in honeypots. By default, the captured data is submitted to a community backend. This community backend uses the data to feed [Sicherheitstacho](https://sicherheitstacho.eu).
+T-Ops is provided in order to make it accessible to all interested in honeypots. By default, the captured data is submitted to a community backend. This community backend uses the data to feed [Sicherheitstacho](https://sicherheitstacho.eu).
 You may opt out of the submission by removing the `# Ewsposter service` from `/opt/tpot/etc/tpot.yml`:
-1. Stop T-Pot services: `systemctl stop tpot`
+1. Stop T-Ops services: `systemctl stop tpot`
 2. Remove Ewsposter service: `vi /opt/tpot/etc/tpot.yml`
 3. Remove the following lines, save and exit vi (`:x!`):<br>
 ```
@@ -485,12 +449,12 @@ You may opt out of the submission by removing the `# Ewsposter service` from `/o
     restart: always
     networks:
      - ewsposter_local
-    image: "dtagdevsec/ewsposter:2006"
+    image: "ghcr.io/telekom-security/ewsposter:2006"
     volumes:
      - /data:/data
      - /data/ews/conf/ews.ip:/opt/ewsposter/ews.ip
 ```
-4. Start T-Pot services: `systemctl start tpot`
+4. Start T-Ops services: `systemctl start tpot`
 
 Data is submitted in a structured ews-format, a XML stucture. Hence, you can parse out the information that is relevant to you.
 
@@ -498,8 +462,8 @@ It is encouraged not to disable the data submission as it is the main purpose of
 
 <a name="hpfeeds-optin"></a>
 ## Opt-In HPFEEDS Data Submission
-As an Opt-In it is now possible to also share T-Pot data with 3rd party HPFEEDS brokers.  
-If you want to share your T-Pot data you simply have to register an account with a 3rd party broker with its own benefits towards the community. You simply run `hpfeeds_optin.sh` which will ask for your credentials. It will automatically update `/opt/tpot/etc/tpot.yml` to deliver events to your desired broker.
+As an Opt-In it is now possible to also share T-Ops data with 3rd party HPFEEDS brokers.  
+If you want to share your T-Ops data you simply have to register an account with a 3rd party broker with its own benefits towards the community. You simply run `hpfeeds_optin.sh` which will ask for your credentials. It will automatically update `/opt/tpot/etc/tpot.yml` to deliver events to your desired broker.
 
 The script can accept a config file as an argument, e.g. `./hpfeeds_optin.sh --conf=hpfeeds.cfg`
 
@@ -515,7 +479,7 @@ As with every development there is always room for improvements ...
 
 Some features may be provided with updated docker images, others may require some hands on from your side.
 
-You are always invited to participate in development on our [GitHub](https://github.com/dtag-dev-sec/tpotce) page.
+You are always invited to participate in development on our [GitHub](https://github.com/nu11secur1ty/T-Ops) page.
 
 <a name="disclaimer"></a>
 # Disclaimer
@@ -527,25 +491,25 @@ You are always invited to participate in development on our [GitHub](https://git
 
 <a name="faq"></a>
 # FAQ
-Please report any issues or questions on our [GitHub issue list](https://github.com/dtag-dev-sec/tpotce/issues), so the community can participate.
+Please report any issues or questions on our [GitHub issue list](https://github.com/nu11secur1ty/T-Ops/issues), so the community can participate.
 
 <a name="contact"></a>
 # Contact
-The software is provided **as is** in a Community Edition format. T-Pot is designed to run out of the box and with zero maintenance involved. <br>
-We hope you understand that we cannot provide support on an individual basis. We will try to address questions, bugs and problems on our [GitHub issue list](https://github.com/dtag-dev-sec/tpotce/issues).
+The software is provided **as is** in a Community Edition format. T-Ops is designed to run out of the box and with zero maintenance involved. <br>
+We hope you understand that we cannot provide support on an individual basis. We will try to address questions, bugs and problems on our [GitHub issue list](https://github.com/telekom-security/tpotce/issues).
 
 <a name="licenses"></a>
 # Licenses
-The software that T-Pot is built on uses the following licenses.
+The software that T-Ops is built on uses the following licenses.
 <br>GPLv2: [conpot](https://github.com/mushorg/conpot/blob/master/LICENSE.txt), [dionaea](https://github.com/DinoTools/dionaea/blob/master/LICENSE), [honeysap](https://github.com/SecureAuthCorp/HoneySAP/blob/master/COPYING), [honeypy](https://github.com/foospidy/HoneyPy/blob/master/LICENSE), [honeytrap](https://github.com/armedpot/honeytrap/blob/master/LICENSE), [suricata](http://suricata-ids.org/about/open-source/)
-<br>GPLv3: [adbhoney](https://github.com/huuck/ADBHoney), [elasticpot](https://gitlab.com/bontchev/elasticpot/-/blob/master/LICENSE), [ewsposter](https://github.com/dtag-dev-sec/ews/), [fatt](https://github.com/0x4D31/fatt/blob/master/LICENSE), [rdpy](https://github.com/citronneur/rdpy/blob/master/LICENSE), [heralding](https://github.com/johnnykv/heralding/blob/master/LICENSE.txt), [snare](https://github.com/mushorg/snare/blob/master/LICENSE), [tanner](https://github.com/mushorg/snare/blob/master/LICENSE)
+<br>GPLv3: [adbhoney](https://github.com/huuck/ADBHoney), [elasticpot](https://gitlab.com/bontchev/elasticpot/-/blob/master/LICENSE), [ewsposter](https://github.com/telekom-security/ews/), [fatt](https://github.com/0x4D31/fatt/blob/master/LICENSE), [rdpy](https://github.com/citronneur/rdpy/blob/master/LICENSE), [heralding](https://github.com/johnnykv/heralding/blob/master/LICENSE.txt), [ipphoney](https://gitlab.com/bontchev/ipphoney/-/blob/master/LICENSE), [snare](https://github.com/mushorg/snare/blob/master/LICENSE), [tanner](https://github.com/mushorg/snare/blob/master/LICENSE)
 <br>Apache 2 License: [cyberchef](https://github.com/gchq/CyberChef/blob/master/LICENSE), [dicompot](https://github.com/nsmfoo/dicompot/blob/master/LICENSE), [elasticsearch](https://github.com/elasticsearch/elasticsearch/blob/master/LICENSE.txt), [logstash](https://github.com/elasticsearch/logstash/blob/master/LICENSE), [kibana](https://github.com/elasticsearch/kibana/blob/master/LICENSE.md), [docker](https://github.com/docker/docker/blob/master/LICENSE), [elasticsearch-head](https://github.com/mobz/elasticsearch-head/blob/master/LICENCE)
 <br>MIT license: [ciscoasa](https://github.com/Cymmetria/ciscoasa_honeypot/blob/master/LICENSE), [glutton](https://github.com/mushorg/glutton/blob/master/LICENSE)
 <br> Other: [citrixhoneypot](https://github.com/MalwareTech/CitrixHoneypot#licencing-agreement-malwaretech-public-licence), [cowrie](https://github.com/micheloosterhof/cowrie/blob/master/LICENSE.md), [mailoney](https://github.com/awhitehatter/mailoney), [Debian licensing](https://www.debian.org/legal/licenses/)
 
 <a name="credits"></a>
 # Credits
-Without open source and the fruitful development community (we are proud to be a part of), T-Pot would not have been possible! Our thanks are extended but not limited to the following people and organizations:
+Without open source and the fruitful development community (we are proud to be a part of), T-Ops would not have been possible! Our thanks are extended but not limited to the following people and organizations:
 
 ### The developers and development communities of
 
@@ -570,6 +534,7 @@ Without open source and the fruitful development community (we are proud to be a
 * [honeypy](https://github.com/foospidy/HoneyPy/graphs/contributors)
 * [honeysap](https://github.com/SecureAuthCorp/HoneySAP/graphs/contributors)
 * [honeytrap](https://github.com/armedpot/honeytrap/graphs/contributors)
+* [ipphoney](https://gitlab.com/bontchev/ipphoney/-/project_members)
 * [kibana](https://github.com/elastic/kibana/graphs/contributors)
 * [logstash](https://github.com/elastic/logstash/graphs/contributors)
 * [mailoney](https://github.com/awhitehatter/mailoney)
@@ -592,11 +557,11 @@ Without open source and the fruitful development community (we are proud to be a
 
 <a name="staytuned"></a>
 # Stay tuned ...
-A new version of T-Pot is released about every 6-12 months, development has shifted more and more towards rolling releases and the usage of `/opt/tpot/update.sh`.
+A new version of T-Ops is released about every 6-12 months, development has shifted more and more towards rolling releases and the usage of `/opt/tpot/update.sh`.
 
 <a name="testimonial"></a>
 # Testimonials
 One of the greatest feedback we have gotten so far is by one of the Conpot developers:<br>
-***"[...] I highly recommend T-Pot which is ... it's not exactly a swiss army knife .. it's more like a swiss army soldier, equipped with a swiss army knife. Inside a tank. A swiss tank. [...]"***<br>
+***"[...] I highly recommend T-Ops which is ... it's not exactly a swiss army knife .. it's more like a swiss army soldier, equipped with a swiss army knife. Inside a tank. A swiss tank. [...]"***<br>
 And from @robcowart (creator of [ElastiFlow](https://github.com/robcowart/elastiflow)):<br>
 ***"#TPot is one of the most well put together turnkey honeypot solutions. It is a must-have for anyone wanting to analyze and understand the behavior of malicious actors and the threat they pose to your organization."***
